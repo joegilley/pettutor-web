@@ -28,6 +28,8 @@ function connect(address, cb) {
     if (err) {return cb(err);}
 
     connections[address] = bean
+    devices[address].connected = true
+    
     return cb();
   });
 }
@@ -51,7 +53,8 @@ function serialize(device) {
   return {
     name: device.getName(),
     address: device.getAddress(),
-    type: device.getType()
+    type: device.getType(),
+    connected: false
   };
 }
 
