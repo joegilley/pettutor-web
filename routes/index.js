@@ -4,11 +4,7 @@ var tutors = require('../tutors');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.send({
-    status: "on",
-    devices: tutors.Devices,
-    connections: tutors.Connections
-  });
+  res.sendfile('./public/index.html');
 });
 
 module.exports = router;

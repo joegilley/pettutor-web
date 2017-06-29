@@ -28,4 +28,10 @@ router.get('/:address/feed', function(req, res, next) {
   });
 });
 
+router.get('/devices', function(req, res, next) {
+  res.send({
+    devices: tutors.Devices
+  });
+});
+
 module.exports = router;
